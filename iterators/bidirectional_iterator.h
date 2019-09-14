@@ -10,23 +10,25 @@ class BidirectionalIterator : public Iterator<T> {
         BidirectionalIterator(Node<T> *node) : Iterator<T>(node) {};
 
         BidirectionalIterator<T> operator=(BidirectionalIterator<T> other) {
-            // TODO
+            return BidirectionalIterator<T>(other.current);
         }
 
         bool operator!=(BidirectionalIterator<T> other) {
-            // TODO
+            return other.current != this->current;
         }
 
         BidirectionalIterator<T> operator++() {
-            // TODO
+            this->current = this->current->next;
+            return *this;
         }
 
         BidirectionalIterator<T> operator--() {
-            // TODO
+            this->current = this->current->prev;
+            return *this;
         }
 
         T operator*() {
-            // TODO
+            return this->current->data;
         }
 };
 

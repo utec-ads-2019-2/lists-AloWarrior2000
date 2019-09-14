@@ -1,0 +1,3 @@
+/home/alonso/Documentos/Ciclo_4/Alg&DataStructure/lists-AloWarrior2000-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/alonso/Documentos/Ciclo_4/Alg&DataStructure/lists-AloWarrior2000-master/cmake-build-debug/CMakeFiles/lists-AloWarrior2000-master.dir
+/home/alonso/Documentos/Ciclo_4/Alg&DataStructure/lists-AloWarrior2000-master/cmake-build-debug/CMakeFiles/edit_cache.dir

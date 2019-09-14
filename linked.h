@@ -10,43 +10,116 @@ class LinkedList : public List<T> {
         LinkedList() : List<T>() {}
 
         T front() {
-            // TODO
+            if(!empty()){
+                return this->head->data;
+            }
+            throw out_of_range("No hay nodos para mostrar");
         }
 
         T back() {
-            // TODO
+            if(!empty()){
+                return this->tail->data;
+            }else{
+                throw out_of_range("No hay nodos para mostrar");
+            }
         }
 
         void push_front(T value) {
-            // TODO
+            auto* temp = new Node<T>;
+            if (!empty()){
+                this->head->prev = temp;
+                temp->next = this->head;
+                temp->prev = nullptr;
+                this->head = temp;
+            } else {
+                this->head = temp;
+                this->tail = temp;
+            }
+            temp->data = value;
+            ++(this->nodes);
+
         }
 
         void push_back(T value) {
-            // TODO
+            auto* temp = new Node<T>;
+            if (!empty()){
+                this->tail->next = temp;
+                temp->prev = this->tail;
+                temp->next = nullptr;
+                this->tail = temp;
+            } else {
+                this->head = temp;
+                this->tail = temp;
+            }
+            temp->data = value;
+            ++(this->nodes);
         }
 
         void pop_front() {
-            // TODO
+            if (!empty()){
+                auto *temp = this->head;
+                this->head = this->head->next;
+                this->head->prev = nullptr;
+                delete temp;
+                --(this->nodes);
+            } else {
+                throw out_of_range("No hay nodos para eliminar");
+            }
         }
 
         void pop_back() {
-            // TODO
+            if (!empty()){
+                if (size() == 1) {
+                    delete this->tail;
+                    this->head = nullptr;
+                    this->tail = nullptr;
+                }else {
+                    auto *temp = this->tail;
+                    this->tail = this->tail->prev;
+                    this->tail->next = nullptr;
+                    delete temp;
+                }
+                --(this->nodes);
+            } else {
+                throw out_of_range("No hay nodos para eliminar");
+            }
         }
 
         T operator[](int index) {
-            // TODO
+            if(!empty() || index > this->nodes) {
+                int half = (this->nodes) / 2;
+                if (index < half) {
+                    int i = 0;
+                    auto* temp = this->head;
+                    while (i != index) {
+                        temp = temp->next;
+                        ++i;
+                    }
+                    return temp->data;
+                } else {
+                    int i = this->nodes - 1;
+                    auto* temp = this->tail;
+                    while (i != index) {
+                        temp = temp->prev;
+                        --i;
+                    }
+                    return temp->data;
+                }
+            } else {throw out_of_range("No hay nodos en esta posición");}
         }
 
         bool empty() {
-            // TODO
+            return this->nodes == 0;
         }
 
         int size() {
-            // TODO
+            return this->nodes;
         }
 
         void clear() {
-            // TODO
+            while(this->head!= nullptr){
+                pop_back();
+            }
         }
 
         void sort() {
@@ -54,7 +127,19 @@ class LinkedList : public List<T> {
         }
     
         void reverse() {
-            // TODO
+            auto* temp = this->tail;
+            this->tail = this->head;
+            this->head = temp;
+            this->head->next = temp->prev;
+
+            while (temp->next != this->tail) {
+                temp->next->next = temp->next->prev;
+                temp->next->prev = temp;
+                temp = temp->next;
+            }
+            this->tail->prev = temp;
+            this->tail->next = nullptr;
+            this->head->prev = nullptr;
         }
 
         string name() {
@@ -62,16 +147,28 @@ class LinkedList : public List<T> {
         }
 
         BidirectionalIterator<T> begin() {
-            // TODO
+            return BidirectionalIterator<T>(this->head);
         }
 
 	    BidirectionalIterator<T> end() {
-            // TODO
+            auto* nendnode = new Node<T>;
+            this->tail->next = nendnode;
+            nendnode->prev = this->tail;
+            return BidirectionalIterator<T>(nendnode);
         }
 
         void merge(LinkedList<T> list) {
-            // TODO
+            if(!list.empty()){
+                if(empty()){
+                    this->head = list.head;
+                }else{
+                    this->tail->next = list.head;
+                    list.head->prev = this->tail;
+                }
+                this->tail = list.tail;
+            }
+            this->nodes+=list.size();
         }
-};
+ };
 
 #endif

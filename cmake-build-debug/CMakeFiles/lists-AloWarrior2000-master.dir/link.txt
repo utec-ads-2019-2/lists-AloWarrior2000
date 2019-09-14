@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lists-AloWarrior2000-master.dir/main.cpp.o CMakeFiles/lists-AloWarrior2000-master.dir/test/tester.cpp.o CMakeFiles/lists-AloWarrior2000-master.dir/mock/mocker.cpp.o  -o lists-AloWarrior2000-master 

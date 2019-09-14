@@ -1,0 +1,4 @@
+/snap/clion/83/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /home/alonso/Documentos/Ciclo_4/Alg&DataStructure/lists-AloWarrior2000-master
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/alonso/Documentos/Ciclo_4/Alg&DataStructure/lists-AloWarrior2000-master/cmake-build-debug

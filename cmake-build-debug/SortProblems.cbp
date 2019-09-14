@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SortProblems"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lists-AloWarrior2000-master">
+				<Option output="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/lists-AloWarrior2000-master" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 lists-AloWarrior2000-master"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lists-AloWarrior2000-master/fast">
+				<Option output="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/lists-AloWarrior2000-master" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 lists-AloWarrior2000-master/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/iterators/bidirectional_iterator.h">
+			<Option target="lists-AloWarrior2000-master"/>
+		</Unit>
+		<Unit filename="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/iterators/forward_iterator.h">
+			<Option target="lists-AloWarrior2000-master"/>
+		</Unit>
+		<Unit filename="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/main.cpp">
+			<Option target="lists-AloWarrior2000-master"/>
+		</Unit>
+		<Unit filename="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/mock/mocker.cpp">
+			<Option target="lists-AloWarrior2000-master"/>
+		</Unit>
+		<Unit filename="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/mock/mocker.h">
+			<Option target="lists-AloWarrior2000-master"/>
+		</Unit>
+		<Unit filename="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/test/tester.cpp">
+			<Option target="lists-AloWarrior2000-master"/>
+		</Unit>
+		<Unit filename="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/test/tester.h">
+			<Option target="lists-AloWarrior2000-master"/>
+		</Unit>
+		<Unit filename="/home/alonso/Documentos/Ciclo_4/Alg&amp;DataStructure/lists-AloWarrior2000-master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

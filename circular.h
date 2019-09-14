@@ -9,51 +9,138 @@ class CircularLinkedList : public List<T> {
         CircularLinkedList() : List<T>() {}
 
         T front() {
-            // TODO
+            if(!empty()){
+                return this->head->data;
+            }
+            throw out_of_range("No hay nodos para mostrar");
         }
 
+
         T back() {
-            // TODO
+            if(!empty()){
+                return this->head->prev->data;
+            }
+            throw out_of_range("No hay nodos para mostrar");
         }
 
         void push_front(T value) {
-            // TODO
+            auto* temp = new Node<T>;
+            if (!empty()){
+                temp->prev = this->head->prev;
+                this->head->prev->next = temp;
+                temp->next = this->head;
+                this->head->prev = temp;
+                this->head = temp;
+            } else {
+                this->head = temp;
+            }
+            temp->data = value;
+            ++(this->nodes);
         }
 
         void push_back(T value) {
-            // TODO
+            auto* temp = new Node<T>;
+            if (!empty()){
+                temp->prev = this->head->prev;
+                this->head->prev->next = temp;
+                temp->next = this->head;
+                this->head->prev = temp;
+            } else {
+                this->head = temp;
+                temp->next = temp;
+                temp->prev = temp;
+            }
+            temp->data = value;
+            ++(this->nodes);
+
         }
 
         void pop_front() {
-            // TODO
+            if (!empty()){
+                auto *temp = this->head;
+                this->head = this->head->next;
+                this->head->prev = temp->prev;
+                temp->prev->next = this->head;
+                delete temp;
+                --(this->nodes);
+            } else {
+                throw out_of_range("No hay nodos para eliminar");
+            }
         }
 
         void pop_back() {
-            // TODO
+            if (!empty()){
+                if (size() == 1) {
+                    delete this->tail;
+                    this->head = nullptr;
+                    this->tail = nullptr;
+                }else {
+                    auto *temp = this->head->prev;
+                    this->head->prev = temp->prev;
+                    temp->prev->next = this->head;
+                    delete temp;
+                }--(this->nodes);
+            } else {
+                throw out_of_range("No hay nodos para eliminar");
+            }
         }
 
         T operator[](int index) {
-            // TODO
+            if(!empty() || index > this->nodes) {
+                int half = (this->nodes) / 2;
+                if (index < half) {
+                    int i = 0;
+                    auto* temp = this->head;
+                    while (i != index) {
+                        temp = temp->next;
+                        ++i;
+                    }
+                    return temp->data;
+                } else {
+                    int i = this->nodes - 1;
+                    auto* temp = this->head->prev;
+                    while (i != index) {
+                        temp = temp->prev;
+                        --i;
+                    }
+                    return temp->data;
+                }
+            } else {throw out_of_range("No hay nodos en esta posición");}
         }
 
         bool empty() {
-            // TODO
+            return this->nodes == 0;
         }
 
         int size() {
-            // TODO
+            return this->nodes;
         }
 
         void clear() {
-            // TODO
+            while (this->head != nullptr){
+                pop_back();
+            }
+            this->head = nullptr;
         }
 
         void sort() {
             // TODO
+
         }
     
         void reverse() {
-            // TODO
+            auto* temp = this->head->prev;
+            this->head->next = temp;
+            temp->next = temp->prev;
+            temp->prev = this->head;
+
+            while (temp->next != this->head) {
+                temp->next->next = temp->next->prev;
+                temp->next->prev = temp;
+                temp = temp->next;
+            }
+            this->head->prev = temp;
+            this->head = this->head->next;
         }
 
         string name() {
@@ -61,15 +148,26 @@ class CircularLinkedList : public List<T> {
         }
 
         BidirectionalIterator<T> begin() {
-            // TODO
+            return BidirectionalIterator<T>(this->head);
         }
 
 	    BidirectionalIterator<T> end() {
-            // TODO
+            return BidirectionalIterator<T>(this->head);
         }
 
         void merge(CircularLinkedList<T> list) {
-            // TODO
+            if(!list.empty()){
+                if(empty()){
+                    this->head = list.head;
+                }else{
+                    this->tail->next = list.head;
+                    list.head->prev = this->tail;
+                }
+                this->tail = list.tail;
+            }
+            this->nodes+=list.size();
+            this->tail->next = this->head;
+            this->head->prev = this->tail;
         }
 };
 
