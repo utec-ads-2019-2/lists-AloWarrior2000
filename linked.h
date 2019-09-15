@@ -63,6 +63,7 @@ class LinkedList : public List<T> {
                 delete temp;
                 --(this->nodes);
             } else {
+                // Mismos casos a la forward
                 throw out_of_range("No hay nodos para eliminar");
             }
         }
@@ -81,11 +82,13 @@ class LinkedList : public List<T> {
                 }
                 --(this->nodes);
             } else {
+                // Mismos casos a la forward
                 throw out_of_range("No hay nodos para eliminar");
             }
         }
 
         T operator[](int index) {
+            // Mismos casos a la forward
             if(!empty() || index > this->nodes) {
                 int half = (this->nodes) / 2;
                 if (index < half) {

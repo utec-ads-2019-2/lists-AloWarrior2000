@@ -10,6 +10,7 @@ class ForwardIterator : public Iterator<T> {
         explicit ForwardIterator(Node<T> *node) : Iterator<T>(node) {};
 
         ForwardIterator<T> operator=(ForwardIterator<T> other) {
+            // Estás creando un nuevo iterador, deberías retornar el mismo
             return ForwardIterator(other.current);
         }
 
@@ -18,11 +19,13 @@ class ForwardIterator : public Iterator<T> {
         }
 
         ForwardIterator<T> operator++() {
+            // Mismos casos a la bidirectional
             this->current = this->current->next;
             return *this;
         }
 
         T operator*() {
+            // Mismos casos a la bidirectional
             return this->current->data;
         }
 };

@@ -10,6 +10,7 @@ class BidirectionalIterator : public Iterator<T> {
         BidirectionalIterator(Node<T> *node) : Iterator<T>(node) {};
 
         BidirectionalIterator<T> operator=(BidirectionalIterator<T> other) {
+            // Estás creando un nuevo iterador, deberías retornar el mismo
             return BidirectionalIterator<T>(other.current);
         }
 
@@ -18,16 +19,19 @@ class BidirectionalIterator : public Iterator<T> {
         }
 
         BidirectionalIterator<T> operator++() {
+            // Falta controlar el caso cuando llegaste al final
             this->current = this->current->next;
             return *this;
         }
 
         BidirectionalIterator<T> operator--() {
+            // Falta controlar el caso cuando estás en la cabeza
             this->current = this->current->prev;
             return *this;
         }
 
         T operator*() {
+            // Aquí si sería necesario controlar un throew
             return this->current->data;
         }
 };

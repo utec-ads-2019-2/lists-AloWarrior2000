@@ -38,7 +38,7 @@ class ForwardList : public List<T> {
             } else {
                 temp->next = this->head;
                 this->head = temp;
-                delete temp;
+                delete temp; // Nunca debes dar delete en un push, eso va a a liberar memoria de lo que acabas de insertar
             }
             ++(this->nodes);
         }
@@ -58,6 +58,7 @@ class ForwardList : public List<T> {
         }
 
         void pop_front() {
+            // Sería mejor verificarlo con punteros, en vez de con size
             if (size() == 1) {
                 delete this->head;
                 this->head = nullptr;
@@ -69,6 +70,7 @@ class ForwardList : public List<T> {
                 delete temp;
                 --(this->nodes);
             } else {
+                // En el caso de los pop no es tan necesario botar una excepción
                 throw out_of_range("No hay nodos para eliminar");
             }
 
@@ -76,6 +78,7 @@ class ForwardList : public List<T> {
 
         void pop_back() {
             if (!empty()) {
+                // Lo mismo que el caso anterior
                 if (size() == 1) {
                     delete this->tail;
                     this->head = nullptr;
@@ -90,11 +93,13 @@ class ForwardList : public List<T> {
                 }
                 --(this->nodes);
             } else {
+                // Lo mismo que el caso anterior
                 throw out_of_range("No hay nodos para eliminar");
             }
         }
 
         T operator[](int index) {
+            // Bastaría con una sola restricción, no es necesario verificar si está vacío index < this->nodes
             if (!empty() || index > this->nodes) {
                 auto* temp = this->head;
                 for (int i = 0; i < index; ++i) {
@@ -140,6 +145,7 @@ class ForwardList : public List<T> {
 
     
         void reverse() {
+            // No es lo más optimo
             auto* aux = this->head;
             this->head = this->tail;
             this->tail = aux;
@@ -164,6 +170,7 @@ class ForwardList : public List<T> {
         }
 
 	    ForwardIterator<T> end() {
+            // Estás creando un nuevo nodo, new va a reservar memoria.
             auto* nendnode = new Node<T>;
             this->tail->next = nendnode;
             return ForwardIterator<T>(nendnode);

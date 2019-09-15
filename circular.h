@@ -64,6 +64,7 @@ class CircularLinkedList : public List<T> {
                 delete temp;
                 --(this->nodes);
             } else {
+                // Mismos casos a la forward
                 throw out_of_range("No hay nodos para eliminar");
             }
         }
@@ -81,11 +82,13 @@ class CircularLinkedList : public List<T> {
                     delete temp;
                 }--(this->nodes);
             } else {
+                // Mismos casos a la forward
                 throw out_of_range("No hay nodos para eliminar");
             }
         }
 
         T operator[](int index) {
+            // En el caso de la cricular no interesa el índice, solo que no sea vacío. Ya que puede seguir dando vueltas
             if(!empty() || index > this->nodes) {
                 int half = (this->nodes) / 2;
                 if (index < half) {
@@ -152,6 +155,7 @@ class CircularLinkedList : public List<T> {
         }
 
 	    BidirectionalIterator<T> end() {
+            // Falta controlar el caos para it != end() 
             return BidirectionalIterator<T>(this->head);
         }
 
